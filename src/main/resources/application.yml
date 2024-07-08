@@ -1,0 +1,20 @@
+spring:
+    application:
+        name: ${SPRING_APPLICATION_NAME}
+    cloud:
+        discovery:
+            client:
+                simple:
+                    instances:
+                        vehicle-service:
+                            - uri: ${VEHICLE_SERVICE_URI}
+
+server:
+    port: ${SERVER_PORT}
+
+eureka:
+    client:
+        register-with-eureka: ${EUREKA_CLIENT_REGISTER_WITH_EUREKA}
+        fetch-registry: ${EUREKA_CLIENT_FETCH_REGISTRY}
+        service-url:
+            defaultZone: ${EUREKA_SERVICE_URL_DEFAULTZONE}
